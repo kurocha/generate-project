@@ -1,6 +1,6 @@
 # Teapot configuration generated at xx.xx.xx
 
-required_version "x.x.x"
+teapot_version "x.x.x"
 
 define_target "$PROJECT_TARGET_NAME" do |target|
 	target.build do |environment|
