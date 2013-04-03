@@ -82,6 +82,30 @@ define_generator "class" do |generator|
 	end
 end
 
+define_generator "xcode-config" do |generator|
+	generator.generate do |*dependency_names|
+		chain = context.dependency_chain(dependency_names)
+		ordered = context.direct_targets(chain.ordered)
+		
+		environment = ordered.last[0].build_environment(context.configuration)
+		
+		substitutions = Substitutions.new
+		
+		environment.flatten.each do |key, value|
+			if Array === value
+				value = value.collect{|value| value.to_s}.join(" ")
+			end
+			
+			puts "TEAPOT_#{key.upcase} => #{value}"
+			substitutions["TEAPOT_#{key.upcase}"] = value.to_s
+		end
+		
+		substitutions["CONFIGURATION_NAME"] = context.configuration.name
+
+		generator.copy('templates/xcode-config', '.', substitutions)
+	end
+end
+
 define_configuration "project" do |configuration|
 	configuration.public!
 
