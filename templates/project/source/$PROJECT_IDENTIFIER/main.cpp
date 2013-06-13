@@ -16,10 +16,10 @@ int main (int argc, char ** argv) {
 	std::cout << "Tip me over and pour me out! (lean over toward spout)" << std::endl;
 	
 	std::cout << "    ___^___   __" << std::endl;
-	std::cout << " .-/       \./ /" << std::endl;
+	std::cout << " .-/       \\./ /" << std::endl;
 	std::cout << "/  |         _/" << std::endl;
-	std::cout << "\__\        /" << std::endl;
-	std::cout << "    \______/" << std::endl;
+	std::cout << "\\__\\        /" << std::endl;
+	std::cout << "    \\______/" << std::endl;
 	
 	// Relax. Everything is okay:
 	return 0;
