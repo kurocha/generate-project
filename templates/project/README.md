@@ -12,16 +12,13 @@ Firstly the build tool `teapot` needs to be installed (which requires [Ruby][2])
  
 	$ gem install teapot
 
-To build the software:
+To build and run the software:
 
-	$ teapot build Application/$PROJECT_IDENTIFIER variant-debug
-
-The executable will be located in `teapot/platforms/$PROJECT_IDENTIFIER/$platform-name/Applications/$PROJECT_NAME/`.
+	$ teapot run Application/$PROJECT_IDENTIFIER variant-debug
 
 To run unit tests, if available:
 
-	$ teapot build Test/$PROJECT_IDENTIFIER variant-debug
-	$ ./teapot/platforms/$PROJECT_IDENTIFIER/$platform-name/bin/$PROJECT_TARGET_NAME-test-runner`
+	$ teapot run Test/$PROJECT_IDENTIFIER variant-debug
 
 [2]: http://www.ruby-lang.org/en/downloads/
 
@@ -37,7 +34,7 @@ To run unit tests, if available:
 
 Released under the MIT license.
 
-Copyright, 2009, 2012, by $AUTHOR_NAME.
+Copyright, $YEAR, by $AUTHOR_NAME. All rights reserved.
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal

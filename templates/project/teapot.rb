@@ -1,10 +1,11 @@
-# Teapot configuration generated at xx.xx.xx
-
-teapot_version "x.x.x"
 
 define_target "$PROJECT_TARGET_NAME" do |target|
 	target.build do |environment|
 		build_directory(package.path, 'source', environment)
+	end
+	
+	target.run do |environment|
+		run_executable("Applications/$PROJECT_NAME/$PROJECT_NAME", environment)
 	end
 	
 	target.depends :platform
@@ -18,6 +19,10 @@ define_target "$PROJECT_TARGET_NAME-tests" do |target|
 		build_directory(package.path, 'test', environment)
 	end
 	
+	target.run do |environment|
+		run_executable("bin/$PROJECT_TARGET_NAME-test-runner", environment)
+	end
+	
 	target.depends :platform
 	target.depends "Language/C++11"
 	
@@ -27,7 +32,5 @@ define_target "$PROJECT_TARGET_NAME-tests" do |target|
 end
 
 define_configuration "$PROJECT_TARGET_NAME" do |configuration|
-	configuration[:source] = "xxx"
-	
 	configuration.import! "project"
 end

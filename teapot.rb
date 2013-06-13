@@ -27,6 +27,9 @@ define_generator "project" do |generator|
 		substitutions['PROJECT_TARGET_NAME'] = name.target
 		
 		# The user's current name:
+		current_date = Time.new
+		substitutions['DATE'] = current_date.strftime("%-d/%-m/%Y")
+		substitutions['YEAR'] = current_date.strftime("%Y")
 		substitutions['AUTHOR_NAME'] = `git config --global user.name`.chomp!
 		
 		generator.copy('templates/project', '.', substitutions)
