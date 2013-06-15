@@ -3,7 +3,7 @@
 #  This file is part of the "Teapot" project, and is released under the MIT license.
 #
 
-teapot_version "0.8.0"
+teapot_version "0.9.0"
 
 define_generator "project" do |generator|
 	generator.description = <<-EOF
@@ -50,6 +50,10 @@ define_generator "class" do |generator|
 	
 	generator.generate do |class_name|
 		*path, class_name = class_name.split(/::/)
+		
+		if path == []
+			raise GeneratorError.new("You must specify a class name with a namespace!")
+		end
 		
 		directory = Pathname('source') + path.join('/')
 		directory.mkpath
