@@ -5,7 +5,7 @@ define_project "$PROJECT_NAME" do |project|
 	EOF
 	
 	project.summary = "$PROJECT_NAME short description."
-	project.license = "MIT"
+	project.license = "MIT License"
 	
 	project.add_author "Samuel Williams", :email => "samuel@oriontransfer.org", :website => "http://www.codeotaku.com"
 	
