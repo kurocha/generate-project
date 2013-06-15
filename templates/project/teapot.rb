@@ -1,4 +1,6 @@
 
+# Project Metadata
+
 define_project "$PROJECT_NAME" do |project|
 	project.description = <<-EOF
 		$PROJECT_NAME description.
@@ -12,6 +14,8 @@ define_project "$PROJECT_NAME" do |project|
 	project.website = "http://www.kyusu.org/projects/$PROJECT_TARGET_NAME"
 	project.version = "0.1.0"
 end
+
+# Build Targets
 
 define_target "$PROJECT_TARGET_NAME" do |target|
 	target.build do |environment|
@@ -44,6 +48,8 @@ define_target "$PROJECT_TARGET_NAME-tests" do |target|
 	
 	target.provides "Test/$PROJECT_IDENTIFIER"
 end
+
+# Configurations
 
 define_configuration "$PROJECT_TARGET_NAME" do |configuration|
 	configuration.import! "project"
