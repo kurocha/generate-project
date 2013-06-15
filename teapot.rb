@@ -46,6 +46,8 @@ end
 define_generator "class" do |generator|
 	generator.description = <<-EOF
 		Generates a basic class file in the project.
+		
+		usage: teapot generate class Namespace::ClassName
 	EOF
 	
 	generator.generate do |class_name|
@@ -74,12 +76,8 @@ define_generator "class" do |generator|
 		# The user's current name:
 		substitutions['AUTHOR_NAME'] = `git config --global user.name`.chomp!
 		
-		if ENV.key?('PROJECT_NAME')
-			# It would be nice if this was saved somewhere:
-			substitutions['PROJECT_NAME'] = ENV['PROJECT_NAME']
-		end
-		
-		substitutions['LICENSE'] = ENV['LICENSE'] || 'MIT License'
+		substitutions['PROJECT_NAME'] = context.project.name
+		substitutions['LICENSE'] = context.project.license
 		
 		current_date = Time.new
 		substitutions['DATE'] = current_date.strftime("%-d/%-m/%Y")
