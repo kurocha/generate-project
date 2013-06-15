@@ -68,7 +68,7 @@ define_generator "class" do |generator|
 		substitutions['CLASS_FILE_NAME'] = name.identifier
 		
 		# e.g. FooBar, typically used as a namespace
-		substitutions['GUARD_NAME'] = name.macro + '_H'
+		substitutions['GUARD_NAME'] = name.macro(path) + '_H'
 		
 		# e.g. foo-bar, typically used for targets, executables
 		substitutions['NAMESPACE'] = scope_for_namespace(path)
