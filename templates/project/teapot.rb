@@ -1,4 +1,18 @@
 
+define_project "$PROJECT_NAME" do |project|
+	project.description = <<-EOF
+		$PROJECT_NAME description.
+	EOF
+	
+	project.summary = "$PROJECT_NAME short description."
+	project.license = "MIT"
+	
+	project.add_author "Samuel Williams", :email => "samuel@oriontransfer.org", :website => "http://www.codeotaku.com"
+	
+	project.website = "http://www.kyusu.org/projects/$PROJECT_TARGET_NAME"
+	project.version = "0.1.0"
+end
+
 define_target "$PROJECT_TARGET_NAME" do |target|
 	target.build do |environment|
 		build_directory(package.path, 'source', environment)
