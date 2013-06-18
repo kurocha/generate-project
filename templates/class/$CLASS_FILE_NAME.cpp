@@ -13,7 +13,7 @@ $CLASS_NAME::$CLASS_NAME()
 {
 }
 
-virtual $CLASS_NAME::~$CLASS_NAME()
+$CLASS_NAME::~$CLASS_NAME()
 {
 }
 </NAMESPACE>
