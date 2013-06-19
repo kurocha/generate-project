@@ -40,19 +40,19 @@ define_generator "project" do |generator|
 	end
 end
 
-def scope_for_namespace(namespace)
-	open = namespace.collect{|name| "namespace #{name}\n{\n"}
-	close = namespace.collect{ "}\n" }
-	
-	return open + close
-end
-
 define_generator "class" do |generator|
 	generator.description = <<-EOF
 		Generates a basic class file in the project.
 		
 		usage: teapot generate class Namespace::ClassName
 	EOF
+	
+	def generator.scope_for_namespace(namespace)
+		open = namespace.collect{|name| "namespace #{name}\n{\n"}
+		close = namespace.collect{ "}\n" }
+	
+		return open + close
+	end
 	
 	generator.generate do |class_name|
 		*path, class_name = class_name.split(/::/)
