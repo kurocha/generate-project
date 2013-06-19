@@ -34,7 +34,9 @@ define_generator "project" do |generator|
 		
 		generator.copy('templates/project', '.', substitutions)
 		
-		Repository.new(context.root).add(:all)
+		repository = Repository.new(context.root)
+		repository.add(:all)
+		repository.commit("Initial project structure.")
 	end
 end
 
