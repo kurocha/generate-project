@@ -34,7 +34,7 @@ define_generator "project" do |generator|
 		
 		generator.copy('templates/project', '.', substitutions)
 		
-		Commands.run("git", "add", "--all")
+		Repository.new(context.root).add(:all)
 	end
 end
 
