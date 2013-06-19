@@ -33,6 +33,8 @@ define_generator "project" do |generator|
 		substitutions['AUTHOR_NAME'] = `git config --global user.name`.chomp!
 		
 		generator.copy('templates/project', '.', substitutions)
+		
+		Commands.run("git", "add", "-A")
 	end
 end
 
