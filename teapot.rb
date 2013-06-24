@@ -47,7 +47,7 @@ define_generator "class" do |generator|
 		usage: teapot generate class Namespace::ClassName
 	EOF
 	
-	def generator.scope_for_namespace(namespace)
+	def scope_for_namespace(namespace)
 		open = namespace.collect{|name| "namespace #{name}\n{\n"}
 		close = namespace.collect{ "}\n" }
 	
