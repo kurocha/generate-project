@@ -126,6 +126,8 @@ define_configuration "dream-framework" do |configuration|
 
 	configuration.import! "platforms"
 
+	configuration.require "utf8"
+
 	configuration.require "png"
 	configuration.require "jpeg"
 	
