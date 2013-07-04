@@ -1,5 +1,5 @@
 //
-//  $CLASS_FILE_NAME.cpp
+//  $CLASS_FILE_NAME.h
 //  File file is part of the "$PROJECT_NAME" project and released under the $LICENSE.
 //
 //  Created by $AUTHOR_NAME on $DATE.
