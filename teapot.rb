@@ -96,7 +96,7 @@ define_generator "xcode-config" do |generator|
 		chain = context.dependency_chain(dependency_names)
 		ordered = context.direct_targets(chain.ordered)
 		
-		environment = ordered.last[0].build_environment(context.configuration)
+		environment = ordered.last[0].environment_for_configuration(context.configuration)
 		
 		substitutions = Substitutions.new
 		
