@@ -92,9 +92,19 @@ define_generator "class" do |generator|
 end
 
 define_generator "xcode-config" do |generator|
+	generator.description = <<-EOF
+		Generate appropriate .xcconfig files for use within Xcode.
+		
+		usage: teapot generate xcode-config [dependencies]
+	EOF
+	
 	generator.generate do |*dependency_names|
 		chain = context.dependency_chain(dependency_names)
 		ordered = context.direct_targets(chain.ordered)
+		
+		if ordered.size == 0
+			raise GeneratorError.new("Empty dependency list, please specify dependencies.", generator)
+		end
 		
 		environment = ordered.last[0].environment_for_configuration(context.configuration)
 		
