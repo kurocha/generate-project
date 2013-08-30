@@ -167,5 +167,5 @@ define_configuration "dream-framework" do |configuration|
 		configuration.require "dream-display-sdl"
 	end
 	
-	configuration.require "dream-client"
+	configuration.require "dream"
 end
