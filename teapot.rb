@@ -151,5 +151,21 @@ define_configuration "dream-framework" do |configuration|
 	
 	configuration.require "euclid"
 	
-	configuration.require "dream"
+	# Provides suitable packages for building on darwin:
+	host /darwin/ do
+		configuration.require "dream-display-osx"
+		configuration.require "dream-display-ios"
+	end
+
+	# Provides suitable packages for building on linux:
+	host /linux/ do
+		configuration.require "dream-display-x11"
+	end
+
+	# Provides suitable packages for building on windows:
+	host /windows/ do
+		configuration.require "dream-display-sdl"
+	end
+	
+	configuration.require "dream-client"
 end
