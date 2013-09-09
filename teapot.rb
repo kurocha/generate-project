@@ -151,6 +151,8 @@ define_configuration "dream-framework" do |configuration|
 	
 	configuration.require "euclid"
 	
+	configuration.require "dream"
+	
 	# Provides suitable packages for building on darwin:
 	host /darwin/ do
 		configuration.require "dream-display-osx"
@@ -167,5 +169,7 @@ define_configuration "dream-framework" do |configuration|
 		configuration.require "dream-display-sdl"
 	end
 	
-	configuration.require "dream"
+	configuration.require "dream-audio-openal"
+	
+	configuration.require "dream-client"
 end
