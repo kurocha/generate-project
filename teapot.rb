@@ -128,48 +128,5 @@ end
 define_configuration "project" do |configuration|
 	configuration.public!
 
-	configuration.import 'dream-framework'
-end
-
-define_configuration "dream-framework" do |configuration|
-	configuration.public!
-
-	configuration.import! "platforms"
-
-	configuration.require "utf8"
-
-	configuration.require "png"
-	configuration.require "jpeg"
-	
-	configuration.require "freetype"
-	
-	configuration.require "ogg"
-	configuration.require "vorbis"
-
-	# Unit testing
-	configuration.require "unit-test"
-	
-	configuration.require "euclid"
-	
-	configuration.require "dream"
-	
-	# Provides suitable packages for building on darwin:
-	host /darwin/ do
-		configuration.require "dream-display-osx"
-		configuration.require "dream-display-ios"
-	end
-
-	# Provides suitable packages for building on linux:
-	host /linux/ do
-		configuration.require "dream-display-x11"
-	end
-
-	# Provides suitable packages for building on windows:
-	host /windows/ do
-		configuration.require "dream-display-sdl"
-	end
-	
-	configuration.require "dream-audio-openal"
-	
-	configuration.require "dream-client"
+	configuration.require 'dream-client'
 end
