@@ -52,7 +52,7 @@ end
 # Configurations
 
 define_configuration "$PROJECT_TARGET_NAME" do |configuration|
-	configuration.import! "project"
+	configuration.require "project"
 	
 	configuration[:run] = ["Application/$PROJECT_IDENTIFIER"]
 end
