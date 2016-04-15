@@ -14,7 +14,7 @@ define_generator "project" do |generator|
 		source_path = Pathname("source/#{project_name}")
 		test_path = Pathname("test/")
 		
-		name = Name.new(project_name)
+		name = Build::Name.new(project_name)
 		substitutions = Substitutions.new
 		
 		# e.g. Foo Bar, typically used as a title, directory, etc.
