@@ -80,4 +80,10 @@ end
 define_configuration '$PROJECT_TARGET_NAME' do |configuration|
 	# Provides all the build related infrastructure:
 	configuration.require 'platforms'
+	
+	# Provides unit testing infrastructure and generators:
+	configuration.require 'unit-test'
+	
+	# Provides some useful C++ generators:
+	configuration.require 'language-cpp-class'
 end
