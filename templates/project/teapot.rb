@@ -37,7 +37,7 @@ define_target "$PROJECT_TARGET_NAME-library" do |target|
 	end
 end
 
-define_target "$PROJECT_TARGET_NAME-tests" do |target|
+define_target "$PROJECT_TARGET_NAME-test" do |target|
 	target.build do
 		run tests: "$PROJECT_IDENTIFIER", source_files: target.package.path.glob('test/$PROJECT_IDENTIFIER/**/*.cpp')
 	end
