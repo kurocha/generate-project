@@ -52,7 +52,7 @@ define_target '$PROJECT_TARGET_NAME-executable' do |target|
 	target.build do
 		source_root = target.package.path + 'source'
 		
-		build executable: '$PROJECT_IDENTIFIER', source_files: source_root.glob('main.cpp')
+		build executable: '$PROJECT_IDENTIFIER', source_files: source_root.glob('$PROJECT_IDENTIFIER.cpp')
 	end
 	
 	target.depends 'Build/Files'
