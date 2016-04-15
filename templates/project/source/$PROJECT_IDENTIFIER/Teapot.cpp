@@ -1,4 +1,6 @@
 
+#include "Teapot.hpp"
+
 #include <iostream>
 
 namespace $PROJECT_IDENTIFIER {
