@@ -38,8 +38,8 @@ define_target '$PROJECT_TARGET_NAME-library' do |target|
 end
 
 define_target '$PROJECT_TARGET_NAME-test' do |target|
-	target.build do
-		run tests: '$PROJECT_IDENTIFIER', source_files: target.package.path.glob('test/$PROJECT_IDENTIFIER/**/*.cpp')
+	target.build do |*arguments|
+		run tests: '$PROJECT_IDENTIFIER', source_files: target.package.path.glob('test/$PROJECT_IDENTIFIER/**/*.cpp'), arguments: arguments
 	end
 	
 	target.depends 'Library/UnitTest'
@@ -66,8 +66,8 @@ define_target '$PROJECT_TARGET_NAME-executable' do |target|
 end
 
 define_target '$PROJECT_TARGET_NAME-run' do |target|
-	target.build do |*argv|
-		run executable: '$PROJECT_IDENTIFIER', arguments: argv
+	target.build do |*arguments|
+		run executable: '$PROJECT_IDENTIFIER', arguments: arguments
 	end
 	
 	target.depends 'Executable/$PROJECT_IDENTIFIER'

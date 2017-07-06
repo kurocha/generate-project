@@ -10,7 +10,7 @@ define_target "project" do |target|
 		Generates a basic C++ project.
 	EOF
 	
-	target.depends "Generate/Copy"
+	target.depends "Generate/Template"
 	target.provides "Generate/Project/Initial"
 	
 	target.build do |project_name|
@@ -32,8 +32,8 @@ define_target "project" do |target|
 	end
 end
 
-define_configuration "project" do |configuration|
+define_configuration 'project' do |configuration|
 	configuration.public!
 	
-	configuration.require 'generators'
+	configuration.require 'generate-template'
 end
