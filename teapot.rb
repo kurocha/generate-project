@@ -11,7 +11,7 @@ define_target "project" do |target|
 	EOF
 	
 	target.depends "Generate/Copy"
-	target.provides "Generate/Initial"
+	target.provides "Generate/Project/Initial"
 	
 	target.build do |project_name|
 		source_path = Build::Files::Directory.new(target.package.path + "templates/project")
