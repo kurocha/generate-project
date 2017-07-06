@@ -9,8 +9,8 @@ define_project '$PROJECT_NAME' do |project|
 	project.summary = '$PROJECT_NAME short description.'
 	project.license = 'MIT License'
 	
-	# project.add_author 'Samuel Williams', email: 'samuel@oriontransfer.org', website: 'http://www.codeotaku.com'
-	# project.website = 'http://teapot.nz/projects/$PROJECT_TARGET_NAME'
+	project.add_author '$AUTHOR_NAME', email: '$AUTHOR_EMAIL'
+	# project.website = 'http://$PROJECT_IDENTIFIER.com/'
 	
 	project.version = '0.1.0'
 end
