@@ -6,7 +6,7 @@ define_project '$PROJECT_NAME' do |project|
 		$PROJECT_NAME description.
 	EOF
 	
-	project.summary = '$PROJECT_NAME short description.'
+	project.summary = '$PROJECT_NAME is so awesome.'
 	project.license = 'MIT License'
 	
 	project.add_author '$AUTHOR_NAME', email: '$AUTHOR_EMAIL'
@@ -28,7 +28,7 @@ define_target '$PROJECT_TARGET_NAME-library' do |target|
 	target.depends 'Build/Clang'
 	
 	target.depends :platform
-	target.depends 'Language/C++11'
+	target.depends 'Language/C++14', private: true
 
 	target.provides 'Library/$PROJECT_IDENTIFIER' do
 		append linkflags [
@@ -59,16 +59,15 @@ define_target '$PROJECT_TARGET_NAME-executable' do |target|
 	target.depends 'Build/Clang'
 	
 	target.depends :platform
-	target.depends 'Language/C++11'
+	target.depends 'Language/C++14', private: true
 	
 	target.depends 'Library/$PROJECT_IDENTIFIER'
 	target.provides 'Executable/$PROJECT_IDENTIFIER'
 end
 
-# teapot brew Run/$PROJECT_IDENTIFIER -- $ARGV
 define_target '$PROJECT_TARGET_NAME-run' do |target|
-	target.build do
-		run executable: '$PROJECT_IDENTIFIER', arguments: ARGV
+	target.build do |*argv|
+		run executable: '$PROJECT_IDENTIFIER', arguments: argv
 	end
 	
 	target.depends 'Executable/$PROJECT_IDENTIFIER'
