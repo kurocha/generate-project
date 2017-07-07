@@ -77,6 +77,8 @@ end
 # Configurations
 
 define_configuration '$PROJECT_TARGET_NAME' do |configuration|
+	configuration.require "project"
+	
 	# Provides all the build related infrastructure:
 	configuration.require 'platforms'
 	
