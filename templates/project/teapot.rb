@@ -84,5 +84,5 @@ define_configuration '$PROJECT_TARGET_NAME' do |configuration|
 	configuration.require 'unit-test'
 	
 	# Provides some useful C++ generators:
-	configuration.require 'language-cpp-class'
+	configuration.require 'generate-cpp-class'
 end
