@@ -5,13 +5,13 @@
 
 teapot_version "2.0"
 
-define_target "project" do |target|
+define_target "generate-project" do |target|
 	target.description = <<-EOF
 		Generates a basic C++ project.
 	EOF
 	
 	target.depends "Generate/Template"
-	target.provides "Generate/Project/Initial"
+	target.provides "Generate/Project"
 	
 	target.build do |project_name|
 		source_path = Build::Files::Directory.new(target.package.path + "templates/project")

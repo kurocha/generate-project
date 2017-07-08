@@ -1,6 +1,6 @@
 # Project
 
-This infusion contains several useful generators and dependencies for working with the Dream framework.
+Generates a basic C++ project.
 
 ## Usage
 
@@ -8,7 +8,7 @@ This infusion contains several useful generators and dependencies for working wi
 
 This will create a new project with a single executable target, with the ability to depend on any library provided by the Dream framework:
 
-	$ teapot create "Foo Bar" https://github.com/dream-framework project
+	$ teapot create "Foo Bar" https://github.com/kurocha generate-project
 
 ### Generate a class file
 
