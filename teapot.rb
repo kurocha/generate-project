@@ -32,7 +32,7 @@ define_target "generate-project" do |target|
 	end
 end
 
-define_configuration 'project' do |configuration|
+define_configuration 'generate-project' do |configuration|
 	configuration.public!
 	
 	configuration.require 'generate-template'
