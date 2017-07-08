@@ -36,4 +36,6 @@ define_configuration 'generate-project' do |configuration|
 	configuration.public!
 	
 	configuration.require 'generate-template'
+	
+	configuration.targets[:create] << "Generate/Project"
 end
