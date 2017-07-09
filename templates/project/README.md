@@ -6,7 +6,7 @@ For examples and documentation please see the main [project page][1].
 
 [1]: http://teapot.nz/
 
-## Building
+## Preparation
 
 Firstly the build tool `teapot` needs to be installed (which requires [Ruby][2]):
  
@@ -14,11 +14,11 @@ Firstly the build tool `teapot` needs to be installed (which requires [Ruby][2])
 
 To build and run the software:
 
-	$ teapot run Application/$PROJECT_IDENTIFIER variant-debug
+	$ teapot Run/$PROJECT_IDENTIFIER
 
 To run unit tests, if available:
 
-	$ teapot run Test/$PROJECT_IDENTIFIER variant-debug
+	$ teapot Test/$PROJECT_IDENTIFIER
 
 [2]: http://www.ruby-lang.org/en/downloads/
 
