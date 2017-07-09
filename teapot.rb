@@ -13,7 +13,7 @@ define_target "generate-project" do |target|
 	target.depends "Generate/Template"
 	target.provides "Generate/Project"
 	
-	target.build do |project_name|
+	target.build do
 		source_path = Build::Files::Directory.new(target.package.path + "templates/project")
 		
 		substitutions = target.context.substitutions
