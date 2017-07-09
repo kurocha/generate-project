@@ -8,25 +8,27 @@ For examples and documentation please see the main [project page][1].
 
 ## Setup
 
-Firstly the build tool `teapot` needs to be installed (which requires [Ruby][2]):
- 
+The build tool `teapot` needs to be installed (which requires [Ruby][2]):
+
 	$ gem install teapot
-
-To fetch all dependencies, run:
-
-	$ teapot fetch
 
 [2]: http://www.ruby-lang.org/en/downloads/
 
-## Usage
+### Install Dependencies
 
-To build and run the software:
+To fetch project dependencies, run the following:
 
-	$ teapot Run/$PROJECT_IDENTIFIER
+	$ cd $PROJECT_TARGET_NAME
+	$ teapot fetch
 
-To run unit tests, if available:
+### Validate Behaviour
 
+The project can be checked by running unit tests:
+
+	$ cd $PROJECT_TARGET_NAME
 	$ teapot Test/$PROJECT_IDENTIFIER
+
+## Usage
 
 ## Contributing
 
