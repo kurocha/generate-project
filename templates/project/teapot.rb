@@ -1,12 +1,14 @@
 
 # Project Metadata
 
-define_project '$PROJECT_NAME' do |project|
+define_project '$PROJECT_TARGET_NAME' do |project|
+	project.title = '$PROJECT_NAME'
+	project.summary = 'A brief one line summary of the project.'
+	
 	project.description = <<-EOF
 		$PROJECT_NAME description.
 	EOF
 	
-	project.summary = '$PROJECT_NAME is so awesome.'
 	project.license = 'MIT License'
 	
 	project.add_author '$AUTHOR_NAME', email: '$AUTHOR_EMAIL'
@@ -29,7 +31,7 @@ define_target '$PROJECT_TARGET_NAME-library' do |target|
 	
 	target.depends :platform
 	target.depends 'Language/C++14', private: true
-
+	
 	target.provides 'Library/$PROJECT_IDENTIFIER' do
 		append linkflags [
 			->{install_prefix + 'lib/lib$PROJECT_IDENTIFIER.a'},

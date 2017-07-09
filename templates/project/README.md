@@ -4,7 +4,7 @@ $PROJECT_NAME is a fantastic project with lots of potential.
 
 For examples and documentation please see the main [project page][1].
 
-[1]: http://www.google.com/
+[1]: http://teapot.nz/
 
 ## Building
 
@@ -22,13 +22,17 @@ To run unit tests, if available:
 
 [2]: http://www.ruby-lang.org/en/downloads/
 
+## Usage
+
+Briefly explain how to use the package.
+
 ## Contributing
 
-1. Fork it
-2. Create your feature branch (`git checkout -b my-new-feature`)
-3. Commit your changes (`git commit -am 'Add some feature'`)
-4. Push to the branch (`git push origin my-new-feature`)
-5. Create new Pull Request
+1. Fork it.
+2. Create your feature branch (`git checkout -b my-new-feature`).
+3. Commit your changes (`git commit -am 'Add some feature'`).
+4. Push to the branch (`git push origin my-new-feature`).
+5. Create new Pull Request.
 
 ## License
 

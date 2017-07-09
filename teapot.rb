@@ -15,18 +15,8 @@ define_target "generate-project" do |target|
 	
 	target.build do |project_name|
 		source_path = Build::Files::Directory.new(target.package.path + "templates/project")
-		substitutions = target.context.substitutions.dup
 		
-		name = Build::Name.new(project_name)
-		
-		# e.g. Foo Bar, typically used as a title, directory, etc.
-		substitutions['PROJECT_NAME'] = name.text
-		
-		# e.g. FooBar, typically used as a namespace
-		substitutions['PROJECT_IDENTIFIER'] = name.identifier
-		
-		# e.g. foo-bar, typically used for targets, executables
-		substitutions['PROJECT_TARGET_NAME'] = name.target
+		substitutions = target.context.substitutions
 		
 		generate source: source_path, prefix: target.context.root, substitutions: substitutions
 	end
