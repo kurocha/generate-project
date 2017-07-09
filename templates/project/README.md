@@ -6,11 +6,19 @@ For examples and documentation please see the main [project page][1].
 
 [1]: http://teapot.nz/
 
-## Preparation
+## Setup
 
 Firstly the build tool `teapot` needs to be installed (which requires [Ruby][2]):
  
 	$ gem install teapot
+
+To fetch all dependencies, run:
+
+	$ teapot fetch
+
+[2]: http://www.ruby-lang.org/en/downloads/
+
+## Usage
 
 To build and run the software:
 
@@ -19,12 +27,6 @@ To build and run the software:
 To run unit tests, if available:
 
 	$ teapot Test/$PROJECT_IDENTIFIER
-
-[2]: http://www.ruby-lang.org/en/downloads/
-
-## Usage
-
-Briefly explain how to use the package.
 
 ## Contributing
 
