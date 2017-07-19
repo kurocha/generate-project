@@ -54,8 +54,8 @@ end
 
 # Configurations
 
-define_configuration '$PROJECT_TARGET_NAME' do |configuration|
-	configuration.require "generate-project"
+define_configuration 'development' do |configuration|
+	configuration.import '$PROJECT_TARGET_NAME'
 	
 	# Provides all the build related infrastructure:
 	configuration.require 'platforms'
@@ -65,4 +65,10 @@ define_configuration '$PROJECT_TARGET_NAME' do |configuration|
 	
 	# Provides some useful C++ generators:
 	configuration.require 'generate-cpp-class'
+	
+	configuration.require 'generate-project'
+end
+
+define_configuration '$PROJECT_TARGET_NAME' do |configuration|
+	configuration.public!
 end
