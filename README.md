@@ -1,20 +1,12 @@
-# Project
+# Generate Project
 
 Generates a basic C++ project.
 
 ## Usage
 
-### Generate a new project
-
-This will create a new project with a single executable target, with the ability to depend on any library provided by the Dream framework:
+This will create a new project:
 
 	$ teapot create "Foo Bar" https://github.com/kurocha generate-project
-
-### Generate a class file
-
-This will create a new class file in your source directory and provide a default empty implementation. It will create directories for any namespaces you specify.
-
-	$ PROJECT_NAME="Foo Bar" LICENSE="GPL v400" teapot generate class "FooBar::Test::Baz"
 
 ## Contributing
 
@@ -28,7 +20,7 @@ This will create a new class file in your source directory and provide a default
 
 Released under the MIT license.
 
-Copyright, 2013, by [Samuel G. D. Williams](http://www.codeotaku.com/samuel-williams).
+Copyright, 2017, by [Samuel G. D. Williams](http://www.codeotaku.com/samuel-williams).
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
