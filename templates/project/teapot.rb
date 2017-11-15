@@ -3,16 +3,9 @@
 
 define_project '$PROJECT_TARGET_NAME' do |project|
 	project.title = '$PROJECT_NAME'
-	project.summary = 'A brief one line summary of the project.'
-	
-	project.description = <<-EOF
-		$PROJECT_NAME description.
-	EOF
-	
 	project.license = 'MIT License'
 	
 	project.add_author '$AUTHOR_NAME', email: '$AUTHOR_EMAIL'
-	# project.website = 'http://$PROJECT_IDENTIFIER.com/'
 	
 	project.version = '0.1.0'
 end
