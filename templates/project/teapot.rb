@@ -42,6 +42,8 @@ define_target '$PROJECT_TARGET_NAME-test' do |target|
 	target.depends 'Library/UnitTest'
 	target.depends 'Library/$PROJECT_IDENTIFIER'
 	
+	target.depends 'Language/C++14', private: true
+	
 	target.provides 'Test/$PROJECT_IDENTIFIER'
 end
 
