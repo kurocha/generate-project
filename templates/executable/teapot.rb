@@ -1,4 +1,30 @@
 
+# Build Targets
+
+define_target '$PROJECT_TARGET_NAME-library' do |target|
+	source_root = target.package.path + 'source'
+	
+	target.build do
+		build prefix: target.name, static_library: '$PROJECT_IDENTIFIER', source_files: source_root.glob('$PROJECT_IDENTIFIER/**/*.cpp')
+	end
+	
+	target.depends 'Build/Files'
+	target.depends 'Build/Clang'
+	
+	target.depends :platform
+	target.depends 'Language/C++14', private: true
+	
+	target.provides 'Library/$PROJECT_IDENTIFIER' do
+		append linkflags [
+			->{install_prefix + target.name + '$PROJECT_IDENTIFIER.a'},
+		]
+		
+		append buildflags [
+			"-I", source_root
+		]
+	end
+end
+
 define_target '$PROJECT_TARGET_NAME-test' do |target|
 	target.build do |*arguments|
 		test_root = target.package.path + 'test'
