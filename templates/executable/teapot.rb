@@ -11,9 +11,9 @@ define_target '$PROJECT_TARGET_NAME-library' do |target|
 	target.provides 'Library/$PROJECT_IDENTIFIER' do
 		source_root = target.package.path + 'source'
 		
-		task = build prefix: target.name, static_library: '$PROJECT_IDENTIFIER', source_files: source_root.glob('$PROJECT_IDENTIFIER/**/*.cpp')
+		library_path = build prefix: target.name, static_library: '$PROJECT_IDENTIFIER', source_files: source_root.glob('$PROJECT_IDENTIFIER/**/*.cpp')
 		
-		append linkflags task.primary_output
+		append linkflags library_path
 		append header_search_paths source_root
 	end
 end
