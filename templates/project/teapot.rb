@@ -2,16 +2,12 @@
 # Build Targets
 
 define_target '$PROJECT_TARGET_NAME-library' do |target|
-	target.depends 'Build/Files'
-	target.depends 'Build/Clang'
-	
-	target.depends :platform
-	target.depends 'Language/C++14', private: true
+	target.depends 'Language/C++14'
 	
 	target.provides 'Library/$PROJECT_IDENTIFIER' do
 		source_root = target.package.path + 'source'
 		
-		library_path = build prefix: target.name, static_library: '$PROJECT_IDENTIFIER', source_files: source_root.glob('$PROJECT_IDENTIFIER/**/*.cpp')
+		library_path = build static_library: '$PROJECT_IDENTIFIER', source_files: source_root.glob('$PROJECT_IDENTIFIER/**/*.cpp')
 		
 		append linkflags library_path
 		append header_search_paths source_root
@@ -22,12 +18,12 @@ define_target '$PROJECT_TARGET_NAME-test' do |target|
 	target.depends 'Library/$PROJECT_IDENTIFIER'
 	target.depends 'Library/UnitTest'
 	
-	target.depends 'Language/C++14', private: true
+	target.depends 'Language/C++14'
 	
 	target.provides 'Test/$PROJECT_IDENTIFIER' do |arguments|
 		test_root = target.package.path + 'test'
 		
-		run prefix: target.name, tests: '$PROJECT_IDENTIFIER', source_files: test_root.glob('$PROJECT_IDENTIFIER/**/*.cpp'), arguments: arguments
+		run tests: '$PROJECT_IDENTIFIER', source_files: test_root.glob('$PROJECT_IDENTIFIER/**/*.cpp'), arguments: arguments
 	end
 end
 
