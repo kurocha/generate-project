@@ -42,7 +42,9 @@ end
 define_target '$PROJECT_TARGET_NAME-run' do |target|
 	target.depends 'Executable/$PROJECT_IDENTIFIER'
 	
-	target.provides 'Run/$PROJECT_IDENTIFIER' do |arguments|
+	target.depends :executor
+	
+	target.provides 'Run/$PROJECT_IDENTIFIER' do |*arguments|
 		run executable: '$PROJECT_IDENTIFIER', arguments: arguments
 	end
 end
