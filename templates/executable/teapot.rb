@@ -37,7 +37,7 @@ define_target '$PROJECT_TARGET_NAME-executable' do |target|
 		
 		executable_path = build executable: '$PROJECT_IDENTIFIER', source_files: source_root.glob('$PROJECT_IDENTIFIER.cpp')
 		
-		$PROJECT_TARGET_NAME_executable executable_path
+		$PROJECT_VARIABLE_NAME_executable executable_path
 	end
 end
 
@@ -47,7 +47,7 @@ define_target '$PROJECT_TARGET_NAME-run' do |target|
 	target.depends :executor
 	
 	target.provides 'Run/$PROJECT_IDENTIFIER' do |*arguments|
-		run executable_file: $PROJECT_TARGET_NAME_executable, arguments: arguments
+		run executable_file: $PROJECT_VARIABLE_NAME_executable, arguments: arguments
 	end
 end
 
