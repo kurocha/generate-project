@@ -23,7 +23,7 @@ define_target '$PROJECT_TARGET_NAME-test' do |target|
 	target.provides 'Test/$PROJECT_IDENTIFIER' do |arguments|
 		test_root = target.package.path + 'test'
 		
-		run tests: '$PROJECT_IDENTIFIER', source_files: test_root.glob('$PROJECT_IDENTIFIER/**/*.cpp'), arguments: arguments
+		run tests: '$PROJECT_IDENTIFIER-tests', source_files: test_root.glob('$PROJECT_IDENTIFIER/**/*.cpp'), arguments: arguments
 	end
 end
 
